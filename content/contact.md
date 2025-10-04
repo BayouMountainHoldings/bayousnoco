@@ -28,7 +28,7 @@ The most direct way to reach us is by email. We do our best to respond to all me
 
 
 
-**General Inquiries:** [info@bayoumountain.holdings](mailto:info@bayoumountain.holdings)
+**General Inquiries:** [info@bayousno.co](mailto:info@bayousno.co)
 
 
 
