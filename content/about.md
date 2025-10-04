@@ -19,4 +19,4 @@ Born from the love of southern tradition and the desire to spread a little sweet
 
 At Bayou Sno Co., life’s best moments are cool, colorful, and meant to be savored.
 
-![About image](blog1/900.jpg)
+![About image](blog1/900.png)
