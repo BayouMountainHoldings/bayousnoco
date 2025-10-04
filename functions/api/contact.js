@@ -11,10 +11,9 @@ export async function onRequest(context) {
         const message = formData.get('message');
         
         // --- D1 DATABASE INSERT (Logging the entry) ---
-        if (env.DB) {
+        if (env.DB) { // Make sure this binding exists for BayouSno.co
             const timestamp = new Date().toISOString();
             
-            // Inserts form data into the 'contacts' table
             const { error } = await env.DB.prepare(
                 "INSERT INTO contacts (name, email, message, timestamp) VALUES (?, ?, ?, ?)"
             ).bind(name, email, message, timestamp).run();
@@ -26,13 +25,12 @@ export async function onRequest(context) {
             console.error("D1 binding (env.DB) is missing!");
         }
         
-        // --- REDIRECT TO HOME PAGE ---
-        // Redirects the user back to the root of the site (/)
-        return Response.redirect("https://bayoumountain.holdings/", 302);
+        // --- REDIRECT TO BAYOUSNO.CO HOME PAGE ---
+        return Response.redirect("https://bayousno.co/", 302);
 
     } catch (error) {
         console.error("Function Error:", error);
-        // If anything fails during parsing or D1 insertion, redirect to the home page with an error status
-        return Response.redirect("https://bayoumountain.holdings/?status=error", 302);
+        // Redirect to home page with error status
+        return Response.redirect("https://bayousno.co/?status=error", 302);
     }
 }
